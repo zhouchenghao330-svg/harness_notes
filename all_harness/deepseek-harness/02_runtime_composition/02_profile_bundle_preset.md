@@ -1,10 +1,10 @@
-# DSH：Profile、Bundle、Preset 的职责与边界
+# 02.2 Profile、Bundle、Preset 的职责与边界
 
 > 状态：装配概念与职责分工已共同讨论，用户已确认并要求详细写入。生效范围等边界同时按源码核对；不代表配置加载、作用范围、preset 生命周期和切换路径已全部共同阅读。
 >
 > 核对日期：2026-11-03；代码基线：`master` / `ce7073d512`。
 >
-> 总览：[[00_overview]]；Cordis 定位：[[00_cordis_and_tool_basics]]；完整阅读进度：[[01_components]]。
+> 所属章节：[[all_harness/deepseek-harness/02_runtime_composition/README|02 运行装配与插件架构]]；总览：[[all_harness/deepseek-harness/00_overview|总览]]；Cordis 定位：[[all_harness/deepseek-harness/02_runtime_composition/01_cordis_and_tool_basics|Cordis 与工具基础]]；完整阅读进度：[[all_harness/deepseek-harness/01_components|组件目录与进度]]。
 
 ## 1. 先区分四件事
 

@@ -1,6 +1,6 @@
 # DeepSeek Harness 拆解总览
 
-> 状态：已建立研究地图，基础概念见 [[00_cordis_and_tool_basics]]，Profile/Bundle/Preset 职责与装配关系见 [[00_profile_bundle_preset]]；其余组件仍按索引推进。本文中的主链预读不代表各组件已经研究完成。
+> 状态：已建立研究地图，基础概念见 [[all_harness/deepseek-harness/02_runtime_composition/01_cordis_and_tool_basics|Cordis 与工具基础]]，Profile/Bundle/Preset 职责与装配关系见 [[all_harness/deepseek-harness/02_runtime_composition/02_profile_bundle_preset|Profile、Bundle、Preset]]；其余组件仍按索引推进。本文中的主链预读不代表各组件已经研究完成。
 >
 > 首次建立地图：2026-10-26；仓库：`/Users/zhouchenghao/orca/deepseek-harness`。当前阅读基线：`master` / `ce7073d512`，2026-11-03 核对；初始地图基线为 `22ddee3792`。后续讲解以当时源码为准，未展开的组件仍需逐项重新核对。
 >
@@ -183,10 +183,10 @@ DSH 中一个 step 包含一次模型请求及其工具处理，失败重试可�
 | 模型历史 | `packages/core/session/src/index.ts` 的 `deriveMessages()` | 从当前生效的消息节点生成历史 |
 | 恢复与可靠性 | `packages/compaction/compaction-basic/src/index.ts`、`packages/llm/llm-retry/src/index.ts` | 压缩和重试的扩展点入口 |
 
-Cordis 与工具基础的已确认范围见 [[00_cordis_and_tool_basics]]。其他组件的进度详见组件索引；源码预读不是共同阅读，也不是行为完整性审核。
+Cordis 与工具基础的已确认范围见 [[all_harness/deepseek-harness/02_runtime_composition/01_cordis_and_tool_basics|Cordis 与工具基础]]。其他组件的进度详见组件索引；源码预读不是共同阅读，也不是行为完整性审核。
 
 ## 7. 后续共同阅读方式
 
 先用具体任务讲运行行为，再看组件分工，最后给出代码锚点。每个组件先建立完整操作清单，区分默认流程、条件分支、后台工作、状态写入、失败与取消；发现新操作时补入索引并说明。
 
-建议从“插件怎样连接能力”的最小前置知识开始，然后读 Agent Loop、状态与生命周期、上下文、工具、Session；再展开其余组件。详细笔记只在对应内容讨论并确认后写入，当前不预填所有章节。
+[[all_harness/deepseek-harness/02_runtime_composition/README|02 运行装配与插件架构]] 的职责分工、服务实例与钩子／中间件已理解当前深度；配置、事件失败策略及完整生命周期仍有研究待办。当前进入 [[all_harness/deepseek-harness/03_agent_loop|03 Agent Loop]]：请求由 Session 生成、工具结果未知、取消收束、并发机制，以及 followup／steer／inject 的输入路由与唤醒差异已理解当前深度，并已与 Hermes 建立并发模式对照；模型重试范围和停止前队列检查理解未确认。用户已授权 Agent 自行选择写入时点，仅记录已讨论内容，写入不代表用户已理解，不预填所有章节。

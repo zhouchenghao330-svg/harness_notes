@@ -1,10 +1,10 @@
-# DSH 前置：Cordis 与工具基础
+# 02.1 Cordis 与工具基础
 
 > 状态：本页限定范围内的基础概念已共同讨论，用户已确认理解并要求写入。它不代表 Cordis、工具体系或文件能力组件已完整阅读。
 >
 > 源码核对日期：2026-11-03；代码基线：`master` / `ce7073d512`。
 >
-> 总览：[[00_overview]]；配置职责详解：[[00_profile_bundle_preset]]；后续阅读任务：[[01_components]]。
+> 所属章节：[[all_harness/deepseek-harness/02_runtime_composition/README|02 运行装配与插件架构]]；总览：[[all_harness/deepseek-harness/00_overview|总览]]；配置职责详解：[[all_harness/deepseek-harness/02_runtime_composition/02_profile_bundle_preset|Profile、Bundle、Preset]]；后续阅读任务：[[all_harness/deepseek-harness/01_components|组件目录与进度]]。
 
 ## 1. 从“读取 README”理解工具
 
@@ -99,7 +99,7 @@ DSH 提供 Agent 的具体行为；Cordis 提供组织和管理这些功能的�
 
 - 事件如何通知、干预、允许或拒绝操作，多个处理者怎样配合。
 - 依赖如何激活、失效和恢复，模块卸载与资源释放的具体顺序。
-- Profile、Bundle、Preset 的职责与组合关系已写入 [[00_profile_bundle_preset]]；Patch、贡献选择和具体隔离机制仍待共同阅读。
+- Profile、Bundle、Preset 的职责与组合关系已写入 [[all_harness/deepseek-harness/02_runtime_composition/02_profile_bundle_preset|Profile、Bundle、Preset]]；Patch、贡献选择和具体隔离机制仍待共同阅读。
 - 工具执行、文件访问及其他 provider 的完整调用链与失败处理。
 - DSH 整体运行流程及各组件的逐项拆解。
 
